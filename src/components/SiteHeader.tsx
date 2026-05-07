@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Bookmark, Globe, Menu, Search } from "lucide-react";
+import { Bookmark, Globe, Menu } from "lucide-react";
 
 export function SiteHeader() {
   return (
@@ -23,9 +23,6 @@ export function SiteHeader() {
           The World&rsquo;s Best Extra Virgin Olive Oils
         </Link>
         <div className="flex items-center gap-2 absolute right-4">
-          <HeaderIconLink href="/search" label="Search">
-            <Search className="h-5 w-5" strokeWidth={2} />
-          </HeaderIconLink>
           <HeaderIconLink href="/my-lists" label="My Lists" hideOnMobile>
             <Bookmark className="h-5 w-5" strokeWidth={2} />
           </HeaderIconLink>
