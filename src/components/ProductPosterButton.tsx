@@ -31,18 +31,16 @@ export function ProductPosterButton(props: PosterData) {
     if (!posterRef.current || busy) return;
     setBusy(true);
     try {
-      const { default: html2canvas } = await import("html2canvas");
-      const canvas = await html2canvas(posterRef.current, {
-        backgroundColor: "#0a0a0a",
-        useCORS: true,
-        scale: 1,
-        logging: false,
+      const domtoimage = (await import("dom-to-image-more")).default;
+      const dataUrl = await domtoimage.toPng(posterRef.current, {
         width: 1080,
         height: 1920,
+        scale: 2,
+        bgcolor: "#0a0a0a",
       });
       const link = document.createElement("a");
       link.download = `${slug(props.name)}-poster.png`;
-      link.href = canvas.toDataURL("image/png");
+      link.href = dataUrl;
       link.click();
     } catch (err) {
       console.error("Poster generation failed", err);
