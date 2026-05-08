@@ -6,6 +6,9 @@ import { useEffect, useRef, useState } from "react";
 const SITE_URL = "https://www.norenfoods.com";
 const FONT_STACK = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
+const POSTER_W = 1080;
+const POSTER_H = 1400;
+
 export function AboutPosterButton() {
   const posterRef = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
@@ -34,8 +37,8 @@ export function AboutPosterButton() {
     try {
       const domtoimage = (await import("dom-to-image-more")).default;
       const dataUrl = await domtoimage.toPng(posterRef.current, {
-        width: 1080,
-        height: 1920,
+        width: POSTER_W,
+        height: POSTER_H,
         scale: 2,
         bgcolor: "#0a0a0a",
       });
@@ -50,8 +53,15 @@ export function AboutPosterButton() {
     }
   }
 
+  const text = (extra: React.CSSProperties = {}): React.CSSProperties => ({
+    fontFamily: FONT_STACK,
+    WebkitFontSmoothing: "antialiased",
+    MozOsxFontSmoothing: "grayscale",
+    ...extra,
+  });
+
   return (
-    <>
+    <div className="flex flex-col items-center gap-6">
       <button
         type="button"
         onClick={generate}
@@ -63,230 +73,320 @@ export function AboutPosterButton() {
       </button>
 
       <div
-        aria-hidden
-        ref={posterRef}
-        className="poster-root"
         style={{
-          position: "fixed",
-          top: -100000,
-          left: -100000,
-          width: 1080,
-          height: 1920,
-          background: "linear-gradient(180deg, #0a0d14 0%, #14181f 100%)",
-          color: "#f4f4f5",
-          fontFamily: FONT_STACK,
-          WebkitFontSmoothing: "antialiased",
-          MozOsxFontSmoothing: "grayscale",
-          textRendering: "geometricPrecision",
-          padding: "70px 70px 90px",
-          display: "flex",
-          flexDirection: "column",
-          boxSizing: "border-box",
-          pointerEvents: "none",
-          outline: "none",
-          border: "none",
+          width: "100%",
+          maxWidth: POSTER_W,
+          aspectRatio: `${POSTER_W} / ${POSTER_H}`,
+          margin: "0 auto",
+          position: "relative",
+          overflow: "hidden",
+          containerType: "inline-size",
         }}
       >
         <style
           dangerouslySetInnerHTML={{
-            __html:
-              ".poster-root *, .poster-root { border: 0 !important; border-width: 0 !important; outline: 0 !important; outline-width: 0 !important; }",
+            __html: `
+              .about-poster-scale {
+                width: ${POSTER_W}px;
+                height: ${POSTER_H}px;
+                transform-origin: top left;
+                transform: scale(1);
+              }
+              @container (max-width: ${POSTER_W}px) {
+                .about-poster-scale {
+                  transform: scale(calc(100cqi / ${POSTER_W}));
+                }
+              }
+              .poster-root *, .poster-root {
+                border: 0 !important;
+                border-width: 0 !important;
+                outline: 0 !important;
+                outline-width: 0 !important;
+              }
+            `,
           }}
         />
-
-        {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/意园大匠_logo_标准组合_透明底.png"
-            alt=""
-            crossOrigin="anonymous"
-            style={{
-              height: 80,
-              width: "auto",
-              objectFit: "contain",
-              display: "block",
-            }}
-          />
+        <div className="about-poster-scale">
           <div
+            ref={posterRef}
+            className="poster-root"
             style={{
-              marginTop: 18,
-              height: 1,
-              width: "100%",
-              background:
-                "linear-gradient(90deg, transparent 0%, rgba(250,204,21,0.4) 50%, transparent 100%)",
-            }}
-          />
-        </div>
-
-        {/* Award ceremony photo */}
-        <div
-          style={{
-            marginTop: 40,
-            width: "100%",
-            height: 560,
-            borderRadius: 16,
-            overflow: "hidden",
-            background: "#1a1f2a",
-            boxShadow: "0 30px 60px rgba(0, 0, 0, 0.55)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/award-ceremony.jpg"
-            alt=""
-            crossOrigin="anonymous"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-        </div>
-
-        {/* Certificate + text block */}
-        <div
-          style={{
-            marginTop: 36,
-            display: "flex",
-            alignItems: "center",
-            gap: 32,
-          }}
-        >
-          <div
-            style={{
-              flexShrink: 0,
-              width: 240,
-              height: 320,
-              background: "#fff",
-              borderRadius: 8,
-              padding: 10,
-              boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
+              width: POSTER_W,
+              height: POSTER_H,
+              background: "linear-gradient(180deg, #0a0d14 0%, #14181f 100%)",
+              color: "#f4f4f5",
+              fontFamily: FONT_STACK,
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
+              textRendering: "geometricPrecision",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              flexDirection: "column",
+              boxSizing: "border-box",
+              outline: "none",
+              border: "none",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/flos-olei-certificate.png"
-              alt=""
-              crossOrigin="anonymous"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                objectFit: "contain",
-                display: "block",
-              }}
-            />
-          </div>
-
-          <div style={{ flex: 1 }}>
+            {/* 1. Logo header */}
             <div
               style={{
-                fontSize: 32,
-                fontWeight: 700,
-                color: "#facc15",
-                lineHeight: 1.2,
-                fontFamily: FONT_STACK,
-                WebkitFontSmoothing: "antialiased",
-                MozOsxFontSmoothing: "grayscale",
+                paddingTop: 40,
+                paddingBottom: 24,
+                display: "flex",
+                justifyContent: "center",
               }}
             >
-              Flos Olei 2025 · Importer of the Year
-            </div>
-            <div
-              style={{
-                marginTop: 18,
-                fontSize: 17,
-                lineHeight: 1.55,
-                color: "rgba(255, 255, 255, 0.78)",
-                fontFamily: FONT_STACK,
-                WebkitFontSmoothing: "antialiased",
-                MozOsxFontSmoothing: "grayscale",
-              }}
-            >
-              Founded in 2023, Norenfoods (暖帘食品科技有限公司) is a Shanghai-based importer and
-              distributor specializing in premium Italian extra virgin olive oils and artisan
-              specialty foods. With a sister company Noren Italia S.R.L. based in Tuscany, Italy,
-              we source directly from award-winning estates — cutting out middlemen to deliver
-              authentic, traceable Italian quality to China. Recognized by Flos Olei 2025 as
-              Importer of the Year, the only China-based importer to receive this distinction.
-            </div>
-            <div
-              style={{
-                marginTop: 22,
-                fontSize: 22,
-                fontWeight: 600,
-                color: "#fde68a",
-                letterSpacing: 1,
-                fontFamily: FONT_STACK,
-                WebkitFontSmoothing: "antialiased",
-                MozOsxFontSmoothing: "grayscale",
-              }}
-            >
-              norenfoods.com
-            </div>
-          </div>
-        </div>
-
-        {/* WeChat QR */}
-        <div
-          style={{
-            marginTop: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 14,
-          }}
-        >
-          <div
-            style={{
-              background: "#fff",
-              padding: 14,
-              borderRadius: 12,
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
-            }}
-          >
-            {qrDataUrl && (
-              // eslint-disable-next-line @next/next/no-img-element
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={qrDataUrl}
+                src="/images/意园大匠_logo_标准组合_透明底.png"
                 alt=""
+                crossOrigin="anonymous"
                 style={{
-                  width: 200,
-                  height: 200,
+                  height: 60,
+                  width: "auto",
                   objectFit: "contain",
                   display: "block",
                 }}
               />
-            )}
-          </div>
-          <div
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: "#fafafa",
-              letterSpacing: 1,
-              fontFamily: FONT_STACK,
-              WebkitFontSmoothing: "antialiased",
-              MozOsxFontSmoothing: "grayscale",
-            }}
-          >
-            微信扫码下单 · Scan to order
+            </div>
+
+            {/* 2. Award ceremony photo — full width, no gap below */}
+            <div
+              style={{
+                width: "100%",
+                height: 380,
+                overflow: "hidden",
+                background: "#0a0e1a",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/award-ceremony.jpg"
+                alt=""
+                crossOrigin="anonymous"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </div>
+
+            {/* 3. Certificate section */}
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.04)",
+                padding: 32,
+                display: "flex",
+                gap: 32,
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  flexShrink: 0,
+                  width: 280,
+                  height: 360,
+                  background: "#fff",
+                  borderRadius: 8,
+                  padding: 12,
+                  boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/flos-olei-certificate.png"
+                  alt=""
+                  crossOrigin="anonymous"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </div>
+
+              <div style={{ flex: 1, paddingLeft: 0, textAlign: "left" }}>
+                <div
+                  style={text({
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: "#facc15",
+                    lineHeight: 1.15,
+                  })}
+                >
+                  Flos Olei 2025
+                </div>
+                <div
+                  style={text({
+                    marginTop: 6,
+                    fontSize: 20,
+                    fontWeight: 500,
+                    color: "#fafafa",
+                  })}
+                >
+                  Importer of the Year
+                </div>
+                <div
+                  style={{
+                    marginTop: 14,
+                    marginBottom: 14,
+                    height: 1,
+                    width: 80,
+                    background: "rgba(250, 204, 21, 0.5)",
+                  }}
+                />
+                <div
+                  style={text({
+                    fontSize: 13,
+                    lineHeight: 1.8,
+                    color: "rgba(255, 255, 255, 0.7)",
+                  })}
+                >
+                  Founded in 2023, Norenfoods is Shanghai&apos;s premier importer of award-winning
+                  Italian extra virgin olive oils and artisan specialty foods. With Noren Italia
+                  S.R.L. in Tuscany, we source directly from estates. The only China-based
+                  importer honored by Flos Olei.
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Stat boxes */}
+            <div
+              style={{
+                display: "flex",
+                background: "rgba(0, 0, 0, 0.35)",
+              }}
+            >
+              {[
+                { num: "2023", label: "Founded" },
+                { num: "10+", label: "Italian Estates" },
+                { num: "#1", label: "Flos Olei China" },
+              ].map((s, i) => (
+                <div
+                  key={s.num}
+                  style={{
+                    flex: 1,
+                    padding: "26px 16px",
+                    textAlign: "center",
+                    borderLeft: i === 0 ? "none" : "1px solid rgba(250, 204, 21, 0.15)",
+                  }}
+                >
+                  <div
+                    style={text({
+                      fontSize: 38,
+                      fontWeight: 800,
+                      color: "#facc15",
+                      lineHeight: 1,
+                    })}
+                  >
+                    {s.num}
+                  </div>
+                  <div
+                    style={text({
+                      marginTop: 8,
+                      fontSize: 12,
+                      letterSpacing: 2,
+                      textTransform: "uppercase",
+                      color: "rgba(255, 255, 255, 0.65)",
+                    })}
+                  >
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* 5. WeChat QR + url */}
+            <div
+              style={{
+                padding: "28px 0 18px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <div
+                style={{
+                  background: "#fff",
+                  padding: 12,
+                  borderRadius: 10,
+                  boxShadow: "0 10px 24px rgba(0, 0, 0, 0.45)",
+                }}
+              >
+                {qrDataUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={qrDataUrl}
+                    alt=""
+                    style={{
+                      width: 160,
+                      height: 160,
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                  />
+                )}
+              </div>
+              <div
+                style={text({
+                  fontSize: 14,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  letterSpacing: 1,
+                })}
+              >
+                微信扫码下单 · Scan to order
+              </div>
+              <div
+                style={text({
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: "#facc15",
+                  letterSpacing: 1,
+                })}
+              >
+                norenfoods.com
+              </div>
+            </div>
+
+            {/* 6. Footer branding */}
+            <div
+              style={{
+                padding: "18px 0 24px",
+                borderTop: "1px solid rgba(250, 204, 21, 0.12)",
+                textAlign: "center",
+                background: "rgba(0, 0, 0, 0.25)",
+              }}
+            >
+              <div
+                style={text({
+                  fontSize: 13,
+                  letterSpacing: 4,
+                  fontWeight: 700,
+                  color: "#facc15",
+                })}
+              >
+                BRAVO MILLERS · NORENFOODS
+              </div>
+              <div
+                style={text({
+                  marginTop: 4,
+                  fontSize: 11,
+                  letterSpacing: 2,
+                  color: "rgba(255, 255, 255, 0.45)",
+                })}
+              >
+                Premium Italian Olive Oils · Shanghai
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
