@@ -75,8 +75,10 @@ export function ProductPosterButton(props: PosterData) {
           height: 1920,
           background: "linear-gradient(180deg, #0a0d14 0%, #14181f 100%)",
           color: "#f4f4f5",
-          fontFamily:
-            'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+          fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
+          textRendering: "geometricPrecision",
           padding: "70px 80px",
           display: "flex",
           flexDirection: "column",
@@ -92,7 +94,9 @@ export function ProductPosterButton(props: PosterData) {
               fontWeight: 800,
               letterSpacing: 12,
               color: "#facc15",
-              fontFamily: '"Times New Roman", serif',
+              fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
             }}
           >
             BRAVO MILLERS
@@ -103,6 +107,9 @@ export function ProductPosterButton(props: PosterData) {
               fontSize: 18,
               color: "rgba(250, 204, 21, 0.75)",
               letterSpacing: 4,
+              fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
             }}
           >
             FLOS OLEI 2025 · BEST IMPORTER OF THE YEAR
@@ -162,13 +169,15 @@ export function ProductPosterButton(props: PosterData) {
               fontWeight: 600,
               lineHeight: 1.15,
               margin: 0,
-              fontFamily: "Arial, sans-serif",
+              fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
               color: "#fafafa",
               display: "-webkit-box",
               WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               padding: "0 20px",
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
             }}
           >
             {props.name}
@@ -180,6 +189,9 @@ export function ProductPosterButton(props: PosterData) {
                 fontSize: 18,
                 color: "rgba(255,255,255,0.55)",
                 letterSpacing: 1,
+                fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
               }}
             >
               {props.subtitle}
@@ -215,6 +227,9 @@ export function ProductPosterButton(props: PosterData) {
                   fontWeight: 500,
                   whiteSpace: "nowrap",
                   textAlign: "center",
+                  fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                  WebkitFontSmoothing: "antialiased",
+                  MozOsxFontSmoothing: "grayscale",
                 }}
               >
                 {a}
@@ -234,6 +249,9 @@ export function ProductPosterButton(props: PosterData) {
                   letterSpacing: 4,
                   color: "#ffffff",
                   marginBottom: 8,
+                  fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                  WebkitFontSmoothing: "antialiased",
+                  MozOsxFontSmoothing: "grayscale",
                 }}
               >
                 −{props.pricing.discountPct}% OFF
@@ -254,6 +272,9 @@ export function ProductPosterButton(props: PosterData) {
                   color: "#f0a500",
                   letterSpacing: 1,
                   lineHeight: 1,
+                  fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                  WebkitFontSmoothing: "antialiased",
+                  MozOsxFontSmoothing: "grayscale",
                 }}
               >
                 ¥{props.pricing.saleCny.toLocaleString("en-US")}
@@ -265,6 +286,9 @@ export function ProductPosterButton(props: PosterData) {
                     color: "#888888",
                     textDecoration: "line-through",
                     fontWeight: 500,
+                    fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                    WebkitFontSmoothing: "antialiased",
+                    MozOsxFontSmoothing: "grayscale",
                   }}
                 >
                   ¥{props.pricing.originalCny.toLocaleString("en-US")}
@@ -307,7 +331,16 @@ export function ProductPosterButton(props: PosterData) {
             />
           </div>
           <div>
-            <div style={{ fontSize: 26, fontWeight: 700, color: "#fafafa" }}>
+            <div
+              style={{
+                fontSize: 26,
+                fontWeight: 700,
+                color: "#fafafa",
+                fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
+              }}
+            >
               微信扫码下单
             </div>
             <div
@@ -316,6 +349,9 @@ export function ProductPosterButton(props: PosterData) {
                 fontSize: 16,
                 color: "rgba(255, 255, 255, 0.55)",
                 letterSpacing: 1,
+                fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
               }}
             >
               Scan to order
@@ -327,6 +363,9 @@ export function ProductPosterButton(props: PosterData) {
                 fontWeight: 700,
                 color: "#facc15",
                 letterSpacing: 2,
+                fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
               }}
             >
               Bravo Millers · Norenfoods
@@ -337,6 +376,9 @@ export function ProductPosterButton(props: PosterData) {
                 fontSize: 14,
                 color: "rgba(255, 255, 255, 0.45)",
                 letterSpacing: 1,
+                fontFamily: "'Arial Black', Arial, Helvetica, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
               }}
             >
               Premium Italian Olive Oils · Shanghai
