@@ -57,13 +57,14 @@ export function AboutSection() {
               importer honored by Flos Olei.
             </p>
 
-            <div className="mt-8 rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-amber-400/30 max-w-md">
+            <div className="mt-8 max-w-md aspect-[1133/850] overflow-hidden rounded-lg shadow-2xl ring-1 ring-amber-400/30">
               <Image
                 src="/images/flos-olei-certificate.png"
                 alt="Flos Olei 2025 Importer of the Year certificate"
-                width={720}
-                height={520}
-                className="w-full h-auto object-contain rounded-lg"
+                width={1133}
+                height={850}
+                className="w-full h-full object-cover scale-[1.16] origin-center"
+                style={{ objectPosition: "center" }}
               />
             </div>
           </div>
