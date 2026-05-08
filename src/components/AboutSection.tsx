@@ -32,14 +32,15 @@ export function AboutSection() {
             {PHOTOS.map((p) => (
               <div
                 key={p.src}
-                className="relative aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 ring-1 ring-amber-400/10 shadow-xl"
+                className="relative aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-amber-400/10 shadow-xl"
+                style={{ backgroundColor: "#0f1829" }}
               >
                 <Image
                   src={p.src}
                   alt={p.alt}
                   fill
                   sizes="(min-width: 1024px) 30vw, 45vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             ))}
