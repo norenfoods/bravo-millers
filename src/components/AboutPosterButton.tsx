@@ -95,24 +95,30 @@ export function AboutPosterButton() {
         />
 
         {/* Header */}
-        <div style={{ textAlign: "center" }}>
-          <div
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/意园大匠_logo_标准组合_透明底.png"
+            alt=""
+            crossOrigin="anonymous"
             style={{
-              fontSize: 40,
-              fontWeight: 800,
-              letterSpacing: 10,
-              color: "#facc15",
-              fontFamily: FONT_STACK,
-              WebkitFontSmoothing: "antialiased",
-              MozOsxFontSmoothing: "grayscale",
+              height: 80,
+              width: "auto",
+              objectFit: "contain",
+              display: "block",
             }}
-          >
-            BRAVO MILLERS · NORENFOODS
-          </div>
+          />
           <div
             style={{
               marginTop: 18,
               height: 1,
+              width: "100%",
               background:
                 "linear-gradient(90deg, transparent 0%, rgba(250,204,21,0.4) 50%, transparent 100%)",
             }}
@@ -202,16 +208,20 @@ export function AboutPosterButton() {
             <div
               style={{
                 marginTop: 18,
-                fontSize: 20,
-                lineHeight: 1.5,
+                fontSize: 17,
+                lineHeight: 1.55,
                 color: "rgba(255, 255, 255, 0.78)",
                 fontFamily: FONT_STACK,
                 WebkitFontSmoothing: "antialiased",
                 MozOsxFontSmoothing: "grayscale",
               }}
             >
-              We are a Shanghai-based importer and distributor of premium Italian extra virgin
-              olive oils and specialty foods.
+              Founded in 2023, Norenfoods (暖帘食品科技有限公司) is a Shanghai-based importer and
+              distributor specializing in premium Italian extra virgin olive oils and artisan
+              specialty foods. With a sister company Noren Italia S.R.L. based in Tuscany, Italy,
+              we source directly from award-winning estates — cutting out middlemen to deliver
+              authentic, traceable Italian quality to China. Recognized by Flos Olei 2025 as
+              Importer of the Year, the only China-based importer to receive this distinction.
             </div>
             <div
               style={{
