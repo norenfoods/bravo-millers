@@ -2,9 +2,25 @@ import Image from "next/image";
 
 const PHOTOS = [
   { src: "/images/award-ceremony.jpg", alt: "Flos Olei 2025 award ceremony" },
+  {
+    src: "/images/flos-olei-certificate.png",
+    alt: "Flos Olei 2025 Importer of the Year certificate",
+  },
   { src: "/images/about-photo-2.jpg", alt: "Norenfoods" },
-  { src: "/images/about-photo-3.jpg", alt: "Norenfoods" },
   { src: "/images/about-photo-4.jpg", alt: "Norenfoods" },
+  {
+    src: "/images/mmexport68f22aa9f9b37d99984931906ed845da_1732156034176.JPEG",
+    alt: "Norenfoods",
+  },
+  {
+    src: "/images/mmexport72fa3b6d823f97c9c86dff1a67c2410a_1732155961813.JPEG",
+    alt: "Norenfoods",
+  },
+  { src: "/images/mimi-大师班.png", alt: "Mimì Coratina masterclass" },
+  {
+    src: "/images/mmexport3584b1674191d1d84cf83171e23a2a05_1732155651961.JPEG",
+    alt: "Norenfoods",
+  },
 ];
 
 const STATS = [
@@ -27,51 +43,35 @@ export function AboutSection() {
           <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
         </header>
 
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            {PHOTOS.map((p) => (
-              <div
-                key={p.src}
-                className="relative aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-amber-400/10 shadow-xl"
-                style={{ backgroundColor: "#0f1829" }}
-              >
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  fill
-                  sizes="(min-width: 1024px) 30vw, 45vw"
-                  className="object-contain"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="mt-12 max-w-3xl mx-auto text-center">
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-amber-300 leading-tight">
+            Flos Olei 2025 · Importer of the Year
+          </h3>
+          <p className="mt-5 text-base md:text-[17px] leading-relaxed text-foreground/75">
+            Founded in 2023, Norenfoods is Shanghai&apos;s premier importer of award-winning
+            Italian extra virgin olive oils and artisan specialty foods. With Noren Italia
+            S.R.L. in Tuscany, Italy, we source directly from estates — cutting out middlemen
+            to deliver authentic, traceable Italian quality to China. The only China-based
+            importer honored by Flos Olei.
+          </p>
+        </div>
 
-          <div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-amber-300 leading-tight">
-              Flos Olei 2025 · Importer of the Year
-            </h3>
-            <p className="mt-5 text-base md:text-[17px] leading-relaxed text-foreground/75">
-              Founded in 2023, Norenfoods is Shanghai&apos;s premier importer of award-winning
-              Italian extra virgin olive oils and artisan specialty foods. With Noren Italia
-              S.R.L. in Tuscany, Italy, we source directly from estates — cutting out middlemen
-              to deliver authentic, traceable Italian quality to China. The only China-based
-              importer honored by Flos Olei.
-            </p>
-
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4">
+          {PHOTOS.map((p) => (
             <div
-              className="mt-8 max-w-md aspect-[1133/850] overflow-hidden rounded-lg shadow-2xl ring-1 ring-amber-400/30"
-              style={{ backgroundColor: "#0f1829" }}
+              key={p.src}
+              className="relative aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-amber-400/10 shadow-xl"
+              style={{ backgroundColor: "#0a0e1a" }}
             >
               <Image
-                src="/images/flos-olei-certificate.png"
-                alt="Flos Olei 2025 Importer of the Year certificate"
-                width={1133}
-                height={850}
-                className="w-full h-full object-cover scale-[1.08] origin-center"
-                style={{ objectPosition: "center" }}
+                src={p.src}
+                alt={p.alt}
+                fill
+                sizes="(min-width: 1024px) 45vw, 50vw"
+                className="object-contain"
               />
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="mt-14 flex flex-wrap justify-center items-center gap-3 sm:gap-4">
