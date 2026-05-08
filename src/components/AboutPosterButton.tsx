@@ -114,9 +114,9 @@ export function AboutPosterButton() {
                 outline: 0 !important;
                 outline-width: 0 !important;
               }
-              .poster-root .cert-img {
-                border: 3px solid #C9A84C !important;
-                border-width: 3px !important;
+              .poster-root .cert-frame {
+                border: 2px solid #C9A84C !important;
+                border-width: 2px !important;
               }
             `,
           }}
@@ -204,27 +204,32 @@ export function AboutPosterButton() {
                   height: 360,
                   background: "#fff",
                   borderRadius: 8,
-                  padding: 12,
+                  position: "relative",
+                  overflow: "hidden",
                   boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  className="cert-img"
-                  src="/images/flos-olei-certificate.png"
+                  src="/images/2_Flos Olei 2025 - The Importer of the Year.png"
                   alt=""
                   crossOrigin="anonymous"
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "contain",
-                    border: "3px solid #C9A84C",
-                    borderRadius: 4,
-                    boxSizing: "border-box",
+                    objectFit: "cover",
                     display: "block",
+                  }}
+                />
+                <div
+                  className="cert-frame"
+                  style={{
+                    position: "absolute",
+                    inset: 10,
+                    border: "2px solid #C9A84C",
+                    boxShadow: "inset 0 0 0 1px #e8c96d",
+                    borderRadius: 2,
+                    pointerEvents: "none",
                   }}
                 />
               </div>
