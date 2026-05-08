@@ -34,7 +34,7 @@ export function ProductPosterButton(props: PosterData) {
       const domtoimage = (await import("dom-to-image-more")).default;
       const dataUrl = await domtoimage.toPng(posterRef.current, {
         width: 1080,
-        height: 1920,
+        height: 2200,
         scale: 2,
         bgcolor: "#0a0a0a",
       });
@@ -61,29 +61,39 @@ export function ProductPosterButton(props: PosterData) {
         {busy ? "Generating…" : "Download Poster"}
       </button>
 
-      {/* Off-screen poster (1080x1920). Position fixed off-screen so it renders into the DOM but is invisible. */}
+      {/* Off-screen poster (1080x2200). Position fixed off-screen so it renders into the DOM but is invisible. */}
       <div
         aria-hidden
         ref={posterRef}
+        className="poster-root"
         style={{
           position: "fixed",
           top: -100000,
           left: -100000,
           width: 1080,
-          height: 1920,
+          height: 2200,
           background: "linear-gradient(180deg, #0a0d14 0%, #14181f 100%)",
           color: "#f4f4f5",
           fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
           textRendering: "geometricPrecision",
-          padding: "70px 80px",
+          padding: "80px 80px 140px",
           display: "flex",
           flexDirection: "column",
           boxSizing: "border-box",
           pointerEvents: "none",
+          outline: "none",
+          border: "none",
         }}
       >
+        {/* Reset every nested element: kill the Tailwind/preflight border + any inherited outline so the captured PNG has no stray section rectangles. */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html:
+              ".poster-root *, .poster-root { border: 0 !important; border-width: 0 !important; outline: 0 !important; outline-width: 0 !important; }",
+          }}
+        />
         {/* Top branding */}
         <div style={{ textAlign: "center" }}>
           <div
