@@ -162,7 +162,7 @@ export function ProductPosterButton(props: PosterData) {
               fontWeight: 600,
               lineHeight: 1.15,
               margin: 0,
-              fontFamily: '"Times New Roman", serif',
+              fontFamily: "Arial, sans-serif",
               color: "#fafafa",
               display: "-webkit-box",
               WebkitLineClamp: 2,
@@ -299,8 +299,8 @@ export function ProductPosterButton(props: PosterData) {
               alt=""
               crossOrigin="anonymous"
               style={{
-                width: 260,
-                height: 260,
+                width: 240,
+                height: 240,
                 objectFit: "contain",
                 display: "block",
               }}
