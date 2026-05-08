@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/AboutSection";
 import { FeaturedProductCard, type FeaturedCardData } from "@/components/FeaturedProductCard";
 import { FilterBar } from "@/components/FilterBar";
 import { MobileWeChatBar } from "@/components/MobileWeChatBar";
@@ -57,6 +58,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <AboutSection />
         <section className="bg-gradient-to-b from-[#1a1208] via-[#0f0a05] to-background border-y border-amber-900/20">
           <div className="container mx-auto px-4 max-w-7xl py-16">
             <BalsamicSubsection
