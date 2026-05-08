@@ -158,12 +158,17 @@ export function ProductPosterButton(props: PosterData) {
         <div style={{ textAlign: "center", marginTop: 8 }}>
           <h1
             style={{
-              fontSize: 56,
+              fontSize: 44,
               fontWeight: 600,
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               margin: 0,
               fontFamily: '"Times New Roman", serif',
               color: "#fafafa",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              padding: "0 20px",
             }}
           >
             {props.name}
@@ -218,62 +223,53 @@ export function ProductPosterButton(props: PosterData) {
           </div>
         )}
 
-        {/* Price (sale badge style) */}
+        {/* Price (plain text — no background) */}
         {props.pricing && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: 32,
-            }}
-          >
-            <div
-              style={{
-                background: "#dc2626",
-                color: "#fff",
-                padding: "18px 32px",
-                borderRadius: 18,
-                textAlign: "center",
-                boxShadow: "0 14px 32px rgba(220, 38, 38, 0.35)",
-                minWidth: 260,
-              }}
-            >
-              {props.pricing.discountPct != null && (
-                <div
-                  style={{
-                    fontSize: 18,
-                    fontWeight: 800,
-                    letterSpacing: 3,
-                    marginBottom: 8,
-                  }}
-                >
-                  −{props.pricing.discountPct}%
-                </div>
-              )}
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            {props.pricing.discountPct != null && (
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  justifyContent: "center",
-                  gap: 14,
+                  fontSize: 18,
+                  fontWeight: 600,
+                  letterSpacing: 4,
+                  color: "#ffffff",
+                  marginBottom: 8,
                 }}
               >
-                <span style={{ fontSize: 60, fontWeight: 800, lineHeight: 1 }}>
-                  ¥{props.pricing.saleCny.toLocaleString("en-US")}
-                </span>
-                {props.pricing.originalCny != null && (
-                  <span
-                    style={{
-                      fontSize: 28,
-                      textDecoration: "line-through",
-                      opacity: 0.75,
-                      fontWeight: 500,
-                    }}
-                  >
-                    ¥{props.pricing.originalCny.toLocaleString("en-US")}
-                  </span>
-                )}
+                −{props.pricing.discountPct}% OFF
               </div>
+            )}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "baseline",
+                justifyContent: "center",
+                gap: 20,
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 80,
+                  fontWeight: 800,
+                  color: "#f0a500",
+                  letterSpacing: 1,
+                  lineHeight: 1,
+                }}
+              >
+                ¥{props.pricing.saleCny.toLocaleString("en-US")}
+              </span>
+              {props.pricing.originalCny != null && (
+                <span
+                  style={{
+                    fontSize: 36,
+                    color: "#888888",
+                    textDecoration: "line-through",
+                    fontWeight: 500,
+                  }}
+                >
+                  ¥{props.pricing.originalCny.toLocaleString("en-US")}
+                </span>
+              )}
             </div>
           </div>
         )}
@@ -303,8 +299,8 @@ export function ProductPosterButton(props: PosterData) {
               alt=""
               crossOrigin="anonymous"
               style={{
-                width: 200,
-                height: 200,
+                width: 260,
+                height: 260,
                 objectFit: "contain",
                 display: "block",
               }}
