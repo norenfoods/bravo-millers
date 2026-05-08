@@ -7,10 +7,10 @@ export function WeChatSection() {
         <div className="flex flex-col items-center text-center gap-6">
           <div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-foreground">
-              Contact via WeChat
+              WeChat Order
             </h2>
             <p className="mt-2 text-sm text-muted-foreground tracking-wide">
-              微信扫码询价 · Scan for trade inquiries
+              微信扫码下单 · Scan to order
             </p>
           </div>
           <div className="rounded-2xl bg-white p-4 shadow-2xl">

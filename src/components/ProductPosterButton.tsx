@@ -2,12 +2,18 @@
 
 import { useRef, useState } from "react";
 
+export interface PosterPricing {
+  saleCny: number;
+  originalCny?: number;
+  discountPct?: number;
+}
+
 export interface PosterData {
   name: string;
   subtitle?: string;
   imagePath?: string;
   awards: string[];
-  saleCny?: number;
+  pricing?: PosterPricing;
 }
 
 const slug = (s: string) =>
@@ -183,8 +189,12 @@ export function ProductPosterButton(props: PosterData) {
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
+              alignItems: "center",
               gap: 10,
               marginTop: 28,
+              maxWidth: 880,
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
             {topAwards.map((a) => (
@@ -199,6 +209,7 @@ export function ProductPosterButton(props: PosterData) {
                   fontSize: 20,
                   fontWeight: 500,
                   whiteSpace: "nowrap",
+                  textAlign: "center",
                 }}
               >
                 {a}
@@ -207,30 +218,75 @@ export function ProductPosterButton(props: PosterData) {
           </div>
         )}
 
-        {/* Price */}
-        {props.saleCny != null && (
+        {/* Price (sale badge style) */}
+        {props.pricing && (
           <div
             style={{
-              textAlign: "center",
-              marginTop: 30,
-              fontSize: 64,
-              fontWeight: 700,
-              color: "#facc15",
-              letterSpacing: 1,
+              display: "flex",
+              justifyContent: "center",
+              marginTop: 32,
             }}
           >
-            ¥{props.saleCny.toLocaleString("en-US")}
+            <div
+              style={{
+                background: "#dc2626",
+                color: "#fff",
+                padding: "18px 32px",
+                borderRadius: 18,
+                textAlign: "center",
+                boxShadow: "0 14px 32px rgba(220, 38, 38, 0.35)",
+                minWidth: 260,
+              }}
+            >
+              {props.pricing.discountPct != null && (
+                <div
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 800,
+                    letterSpacing: 3,
+                    marginBottom: 8,
+                  }}
+                >
+                  −{props.pricing.discountPct}%
+                </div>
+              )}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  justifyContent: "center",
+                  gap: 14,
+                }}
+              >
+                <span style={{ fontSize: 60, fontWeight: 800, lineHeight: 1 }}>
+                  ¥{props.pricing.saleCny.toLocaleString("en-US")}
+                </span>
+                {props.pricing.originalCny != null && (
+                  <span
+                    style={{
+                      fontSize: 28,
+                      textDecoration: "line-through",
+                      opacity: 0.75,
+                      fontWeight: 500,
+                    }}
+                  >
+                    ¥{props.pricing.originalCny.toLocaleString("en-US")}
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
         )}
 
-        {/* QR code + branding footer */}
+        {/* QR code + branding footer (centered, stacked vertically) */}
         <div
           style={{
-            marginTop: 40,
+            marginTop: 44,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            gap: 32,
+            textAlign: "center",
+            gap: 18,
           }}
         >
           <div
@@ -238,7 +294,7 @@ export function ProductPosterButton(props: PosterData) {
               background: "#fff",
               padding: 14,
               borderRadius: 14,
-              boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -254,25 +310,25 @@ export function ProductPosterButton(props: PosterData) {
               }}
             />
           </div>
-          <div style={{ minWidth: 260 }}>
+          <div>
             <div style={{ fontSize: 26, fontWeight: 700, color: "#fafafa" }}>
-              微信扫码询价
+              微信扫码下单
             </div>
             <div
               style={{
                 marginTop: 6,
                 fontSize: 16,
-                color: "rgba(255,255,255,0.55)",
+                color: "rgba(255, 255, 255, 0.55)",
                 letterSpacing: 1,
               }}
             >
-              Scan to inquire
+              Scan to order
             </div>
             <div
               style={{
                 marginTop: 18,
-                fontSize: 18,
-                fontWeight: 600,
+                fontSize: 20,
+                fontWeight: 700,
                 color: "#facc15",
                 letterSpacing: 2,
               }}
@@ -283,7 +339,7 @@ export function ProductPosterButton(props: PosterData) {
               style={{
                 marginTop: 4,
                 fontSize: 14,
-                color: "rgba(255,255,255,0.45)",
+                color: "rgba(255, 255, 255, 0.45)",
                 letterSpacing: 1,
               }}
             >

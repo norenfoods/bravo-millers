@@ -50,7 +50,7 @@ type ProductView = {
   hideAwardHistory?: boolean;
   classificationOverride?: { label: string; value: string }[];
   subtitle?: string;
-  saleCny?: number;
+  pricing?: { saleCny: number; originalCny?: number; discountPct?: number };
 };
 
 function fromFeatured(p: FeaturedProduct): ProductView {
@@ -85,7 +85,7 @@ function fromFeatured(p: FeaturedProduct): ProductView {
     hideAwardHistory: p.hideAwardHistory,
     classificationOverride: p.classificationOverride,
     subtitle: p.subtitle,
-    saleCny: p.pricing?.saleCny,
+    pricing: p.pricing,
   };
 }
 
@@ -215,7 +215,7 @@ function Hero({ view }: { view: ProductView }) {
               subtitle={view.subtitle}
               imagePath={view.imagePath}
               awards={view.cardAwards ?? view.awards?.slice(0, 3) ?? []}
-              saleCny={view.saleCny}
+              pricing={view.pricing}
             />
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-2">

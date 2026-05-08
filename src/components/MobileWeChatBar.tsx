@@ -30,7 +30,7 @@ export function MobileWeChatBar() {
       >
         <span className="flex items-center gap-2 font-semibold text-base">
           <WeChatGlyph className="h-5 w-5" />
-          微信扫码询价
+          微信扫码下单
         </span>
         <span className="rounded-md bg-white p-1">
           <Image
@@ -72,7 +72,7 @@ export function MobileWeChatBar() {
               priority
             />
             <div className="text-center">
-              <p className="text-base font-semibold text-zinc-900">微信扫码询价</p>
+              <p className="text-base font-semibold text-zinc-900">微信扫码下单</p>
               <p className="text-sm text-zinc-600 mt-1">
                 Open WeChat &middot; Scan &middot; Contact us
               </p>
