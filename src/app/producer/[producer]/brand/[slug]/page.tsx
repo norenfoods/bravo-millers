@@ -216,6 +216,8 @@ function Hero({ view }: { view: ProductView }) {
               imagePath={view.imagePath}
               awards={view.cardAwards ?? view.awards?.slice(0, 3) ?? []}
               pricing={view.pricing}
+              producerSlug={view.producerSlug}
+              brandSlug={view.slug}
             />
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-2">

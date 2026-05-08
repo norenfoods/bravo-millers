@@ -37,7 +37,7 @@ export function ProductPosterButton(props: PosterData) {
   useEffect(() => {
     let cancelled = false;
     QRCode.toDataURL(detailUrl, {
-      width: 320,
+      width: 480,
       margin: 1,
       color: { dark: "#0a0d14", light: "#ffffff" },
       errorCorrectionLevel: "M",
@@ -330,7 +330,7 @@ export function ProductPosterButton(props: PosterData) {
           </div>
         )}
 
-        {/* Two QR codes side-by-side (centered) + shared branding */}
+        {/* Single detail-page QR (centered) + shared branding */}
         <div
           style={{
             marginTop: 44,
@@ -344,124 +344,45 @@ export function ProductPosterButton(props: PosterData) {
           <div
             style={{
               display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: 60,
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 14,
             }}
           >
-            {/* Left: detail-page QR */}
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 12,
+                background: "#fff",
+                padding: 14,
+                borderRadius: 12,
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
               }}
             >
-              <div
-                style={{
-                  background: "#fff",
-                  padding: 12,
-                  borderRadius: 12,
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
-                }}
-              >
-                {detailQrDataUrl && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={detailQrDataUrl}
-                    alt=""
-                    style={{
-                      width: 240,
-                      height: 240,
-                      objectFit: "contain",
-                      display: "block",
-                    }}
-                  />
-                )}
-              </div>
-              <div
-                style={{
-                  fontSize: 18,
-                  fontWeight: 600,
-                  color: "#fafafa",
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  WebkitFontSmoothing: "antialiased",
-                  MozOsxFontSmoothing: "grayscale",
-                }}
-              >
-                Scan for details
-              </div>
-              <div
-                style={{
-                  fontSize: 15,
-                  color: "rgba(255, 255, 255, 0.55)",
-                  letterSpacing: 1,
-                  marginTop: -4,
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  WebkitFontSmoothing: "antialiased",
-                  MozOsxFontSmoothing: "grayscale",
-                }}
-              >
-                扫码查看详情
-              </div>
-            </div>
-
-            {/* Right: WeChat QR */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 12,
-              }}
-            >
-              <div
-                style={{
-                  background: "#fff",
-                  padding: 12,
-                  borderRadius: 12,
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+              {detailQrDataUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src="/wechat.png"
+                  src={detailQrDataUrl}
                   alt=""
-                  crossOrigin="anonymous"
                   style={{
-                    width: 320,
-                    height: 320,
+                    width: 200,
+                    height: 200,
                     objectFit: "contain",
                     display: "block",
                   }}
                 />
-              </div>
-              <div
-                style={{
-                  fontSize: 22,
-                  fontWeight: 700,
-                  color: "#fafafa",
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  WebkitFontSmoothing: "antialiased",
-                  MozOsxFontSmoothing: "grayscale",
-                }}
-              >
-                微信扫码下单
-              </div>
-              <div
-                style={{
-                  fontSize: 15,
-                  color: "rgba(255, 255, 255, 0.55)",
-                  letterSpacing: 1,
-                  marginTop: -4,
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  WebkitFontSmoothing: "antialiased",
-                  MozOsxFontSmoothing: "grayscale",
-                }}
-              >
-                Scan to order
-              </div>
+              )}
+            </div>
+            <div
+              style={{
+                fontSize: 20,
+                fontWeight: 600,
+                color: "#fafafa",
+                letterSpacing: 1,
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
+              }}
+            >
+              Scan for details · 扫码查看详情
             </div>
           </div>
 
