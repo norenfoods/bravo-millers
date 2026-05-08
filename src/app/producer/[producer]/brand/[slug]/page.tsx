@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Award, MapPin, Trophy } from "lucide-react";
 import { MobileWeChatBar } from "@/components/MobileWeChatBar";
+import { ProductPosterButton } from "@/components/ProductPosterButton";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WINNERS_2026 } from "@/lib/winners";
@@ -44,9 +45,12 @@ type ProductView = {
   rank?: number;
   medal?: Winner["medal"];
   awards?: string[];
+  cardAwards?: string[];
   tastingProse?: string;
   hideAwardHistory?: boolean;
   classificationOverride?: { label: string; value: string }[];
+  subtitle?: string;
+  saleCny?: number;
 };
 
 function fromFeatured(p: FeaturedProduct): ProductView {
@@ -76,9 +80,12 @@ function fromFeatured(p: FeaturedProduct): ProductView {
     pairings: p.pairings,
     classification,
     awards: p.awards,
+    cardAwards: p.cardAwards,
     tastingProse: p.tastingProse,
     hideAwardHistory: p.hideAwardHistory,
     classificationOverride: p.classificationOverride,
+    subtitle: p.subtitle,
+    saleCny: p.pricing?.saleCny,
   };
 }
 
@@ -241,12 +248,21 @@ function Hero({ view }: { view: ProductView }) {
             {view.producerBlurb}
           </p>
           <div className="mt-5 flex flex-col items-start gap-4">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-border bg-secondary/40 hover:bg-secondary text-sm font-medium text-foreground transition-colors"
-            >
-              Producer Profile
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-border bg-secondary/40 hover:bg-secondary text-sm font-medium text-foreground transition-colors"
+              >
+                Producer Profile
+              </button>
+              <ProductPosterButton
+                name={view.name}
+                subtitle={view.subtitle}
+                imagePath={view.imagePath}
+                awards={view.cardAwards ?? view.awards?.slice(0, 3) ?? []}
+                saleCny={view.saleCny}
+              />
+            </div>
             <Link
               href="#"
               className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
