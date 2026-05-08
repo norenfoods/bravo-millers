@@ -114,9 +114,9 @@ export function AboutPosterButton() {
                 outline: 0 !important;
                 outline-width: 0 !important;
               }
-              .poster-root .cert-card {
-                border: 2.5px solid #C9A84C !important;
-                border-width: 2.5px !important;
+              .poster-root .cert-img {
+                border: 3px solid #C9A84C !important;
+                border-width: 3px !important;
               }
             `,
           }}
@@ -198,7 +198,6 @@ export function AboutPosterButton() {
               }}
             >
               <div
-                className="cert-card"
                 style={{
                   flexShrink: 0,
                   width: 280,
@@ -206,9 +205,7 @@ export function AboutPosterButton() {
                   background: "#fff",
                   borderRadius: 8,
                   padding: 12,
-                  border: "2.5px solid #C9A84C",
-                  boxShadow:
-                    "0 0 0 1px #e8c96d, 0 18px 40px rgba(0, 0, 0, 0.5)",
+                  boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -216,13 +213,17 @@ export function AboutPosterButton() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  className="cert-img"
                   src="/images/flos-olei-certificate.png"
                   alt=""
                   crossOrigin="anonymous"
                   style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
+                    width: "100%",
+                    height: "100%",
                     objectFit: "contain",
+                    border: "3px solid #C9A84C",
+                    borderRadius: 4,
+                    boxSizing: "border-box",
                     display: "block",
                   }}
                 />
