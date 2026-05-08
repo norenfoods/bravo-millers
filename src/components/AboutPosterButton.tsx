@@ -7,7 +7,14 @@ const SITE_URL = "https://www.norenfoods.com";
 const FONT_STACK = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 const POSTER_W = 1080;
-const POSTER_H = 1400;
+const POSTER_H = 1700;
+
+const PHOTOS = [
+  "/images/award-ceremony.jpg",
+  "/images/about-photo-2.jpg",
+  "/images/about-photo-3.jpg",
+  "/images/about-photo-4.jpg",
+];
 
 export function AboutPosterButton() {
   const posterRef = useRef<HTMLDivElement>(null);
@@ -164,27 +171,45 @@ export function AboutPosterButton() {
               />
             </div>
 
-            {/* 2. Award ceremony photo — full width, no gap below */}
+            {/* 2. 2×2 photo grid */}
             <div
               style={{
-                width: "100%",
-                height: 380,
-                overflow: "hidden",
-                background: "#0a0e1a",
+                padding: "0 32px 24px",
+                display: "grid",
+                gridTemplateColumns: "502px 502px",
+                gridTemplateRows: "372px 372px",
+                gap: 12,
+                justifyContent: "center",
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/award-ceremony.jpg"
-                alt=""
-                crossOrigin="anonymous"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
+              {PHOTOS.map((src) => (
+                <div
+                  key={src}
+                  style={{
+                    width: 502,
+                    height: 372,
+                    borderRadius: 14,
+                    overflow: "hidden",
+                    background: "#0a0e1a",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt=""
+                    crossOrigin="anonymous"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              ))}
             </div>
 
             {/* 3. Certificate section */}
