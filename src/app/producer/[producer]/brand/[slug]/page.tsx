@@ -209,6 +209,15 @@ function Hero({ view }: { view: ProductView }) {
             {view.name}
           </h1>
           <p className="text-sm text-muted-foreground mt-2">By {view.producer}</p>
+          <div className="mt-3">
+            <ProductPosterButton
+              name={view.name}
+              subtitle={view.subtitle}
+              imagePath={view.imagePath}
+              awards={view.cardAwards ?? view.awards?.slice(0, 3) ?? []}
+              saleCny={view.saleCny}
+            />
+          </div>
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 h-7 px-3 rounded-full border border-accent/40 bg-accent/10 text-accent text-xs font-medium">
               <Award className="h-3 w-3" />
@@ -248,21 +257,12 @@ function Hero({ view }: { view: ProductView }) {
             {view.producerBlurb}
           </p>
           <div className="mt-5 flex flex-col items-start gap-4">
-            <div className="flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-border bg-secondary/40 hover:bg-secondary text-sm font-medium text-foreground transition-colors"
-              >
-                Producer Profile
-              </button>
-              <ProductPosterButton
-                name={view.name}
-                subtitle={view.subtitle}
-                imagePath={view.imagePath}
-                awards={view.cardAwards ?? view.awards?.slice(0, 3) ?? []}
-                saleCny={view.saleCny}
-              />
-            </div>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-border bg-secondary/40 hover:bg-secondary text-sm font-medium text-foreground transition-colors"
+            >
+              Producer Profile
+            </button>
             <Link
               href="#"
               className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
