@@ -11,6 +11,8 @@ const POSTER_H = 1400;
 
 export function AboutPosterButton() {
   const posterRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scaleRef = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
   const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
 
@@ -29,6 +31,22 @@ export function AboutPosterButton() {
     return () => {
       cancelled = true;
     };
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const scaleEl = scaleRef.current;
+    if (!container || !scaleEl) return;
+
+    const observer = new ResizeObserver(([entry]) => {
+      const w = entry.contentRect.width;
+      const scale = Math.min(1, w / POSTER_W);
+      scaleEl.style.transform = `scale(${scale})`;
+      container.style.height = `${POSTER_H * scale}px`;
+    });
+
+    observer.observe(container);
+    return () => observer.disconnect();
   }, []);
 
   async function generate() {
@@ -73,14 +91,13 @@ export function AboutPosterButton() {
       </button>
 
       <div
+        ref={containerRef}
         style={{
           width: "100%",
           maxWidth: POSTER_W,
-          aspectRatio: `${POSTER_W} / ${POSTER_H}`,
           margin: "0 auto",
           position: "relative",
           overflow: "hidden",
-          containerType: "inline-size",
         }}
       >
         <style
@@ -90,12 +107,6 @@ export function AboutPosterButton() {
                 width: ${POSTER_W}px;
                 height: ${POSTER_H}px;
                 transform-origin: top left;
-                transform: scale(1);
-              }
-              @container (max-width: ${POSTER_W}px) {
-                .about-poster-scale {
-                  transform: scale(calc(100cqi / ${POSTER_W}));
-                }
               }
               .poster-root *, .poster-root {
                 border: 0 !important;
@@ -103,10 +114,14 @@ export function AboutPosterButton() {
                 outline: 0 !important;
                 outline-width: 0 !important;
               }
+              .poster-root .cert-card {
+                border: 2.5px solid #C9A84C !important;
+                border-width: 2.5px !important;
+              }
             `,
           }}
         />
-        <div className="about-poster-scale">
+        <div ref={scaleRef} className="about-poster-scale">
           <div
             ref={posterRef}
             className="poster-root"
@@ -183,6 +198,7 @@ export function AboutPosterButton() {
               }}
             >
               <div
+                className="cert-card"
                 style={{
                   flexShrink: 0,
                   width: 280,
@@ -190,7 +206,9 @@ export function AboutPosterButton() {
                   background: "#fff",
                   borderRadius: 8,
                   padding: 12,
-                  boxShadow: "0 18px 40px rgba(0, 0, 0, 0.5)",
+                  border: "2.5px solid #C9A84C",
+                  boxShadow:
+                    "0 0 0 1px #e8c96d, 0 18px 40px rgba(0, 0, 0, 0.5)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
