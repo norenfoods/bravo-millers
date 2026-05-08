@@ -200,8 +200,8 @@ export function AboutPosterButton() {
               <div
                 style={{
                   flexShrink: 0,
-                  width: 280,
-                  height: 360,
+                  width: 360,
+                  height: 270,
                   background: "#fff",
                   borderRadius: 8,
                   position: "relative",
@@ -225,7 +225,7 @@ export function AboutPosterButton() {
                   className="cert-frame"
                   style={{
                     position: "absolute",
-                    inset: 10,
+                    inset: 8,
                     border: "2px solid #C9A84C",
                     boxShadow: "inset 0 0 0 1px #e8c96d",
                     borderRadius: 2,
