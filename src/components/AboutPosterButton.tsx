@@ -225,10 +225,10 @@ export function AboutPosterButton() {
                   className="cert-frame"
                   style={{
                     position: "absolute",
-                    inset: 8,
+                    inset: 6,
                     border: "2px solid #C9A84C",
                     boxShadow: "inset 0 0 0 1px #e8c96d",
-                    borderRadius: 2,
+                    borderRadius: 4,
                     pointerEvents: "none",
                   }}
                 />
