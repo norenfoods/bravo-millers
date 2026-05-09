@@ -15,7 +15,7 @@ export function WeChatSection() {
           </div>
           <div className="rounded-2xl bg-white p-4 shadow-2xl">
             <Image
-              src="/wechat.png"
+              src="/images/mmqrcode1778288129256.PNG"
               alt="WeChat QR code for Norenfoods"
               width={160}
               height={160}

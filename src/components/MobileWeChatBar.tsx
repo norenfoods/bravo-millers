@@ -34,7 +34,7 @@ export function MobileWeChatBar() {
         </span>
         <span className="rounded-md bg-white p-1">
           <Image
-            src="/wechat.png"
+            src="/images/mmqrcode1778288129256.PNG"
             alt=""
             width={36}
             height={36}
@@ -64,7 +64,7 @@ export function MobileWeChatBar() {
               <X className="h-4 w-4" />
             </button>
             <Image
-              src="/wechat.png"
+              src="/images/mmqrcode1778288129256.PNG"
               alt="WeChat QR code"
               width={280}
               height={280}
