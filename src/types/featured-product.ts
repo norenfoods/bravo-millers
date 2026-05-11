@@ -1,5 +1,6 @@
 export type ProductIntensity =
   | "Delicate"
+  | "Light"
   | "Light-Medium"
   | "Medium"
   | "Medium-Robust"

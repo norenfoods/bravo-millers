@@ -21,6 +21,9 @@ const VISIBLE_SLUGS = new Set([
   "bonamini-dop-veneto-valpolicella",
   "quattrociocchi-olivastro",
   "quattrociocchi-superbo",
+  "mate-viola-tonda",
+  "mate-limone",
+  "mate-arancia",
 ]);
 
 const IGP_SLUGS = new Set([
