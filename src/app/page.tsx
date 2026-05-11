@@ -18,6 +18,7 @@ const VISIBLE_SLUGS = new Set([
   "fonte-di-foiano-grand-cru",
   "frantoio-romano-ortice-n01",
   "frantoio-romano-racioppella-n03",
+  "bonamini-dop-veneto-valpolicella",
 ]);
 
 const IGP_SLUGS = new Set([

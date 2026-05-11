@@ -357,6 +357,60 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Frantoio Romano是位于坎帕尼亚大区贝内文托省塔布诺山脚下的桑尼奥家族酒庄。N.03选用稀有本土品种Racioppella，仅产于蓬特地区萨姆尼特山丘，在橄榄转色期人工采摘并于数小时内冷压萃取，保留其细腻芬芳。",
   },
   {
+    slug: "bonamini-dop-veneto-valpolicella",
+    name: "Bonamini DOP Veneto Valpolicella 500ml",
+    producer: "Frantoio Bonamini",
+    producerSlug: "frantoio-bonamini",
+    region: "Veneto",
+    country: "Italy",
+    cultivar: "Grignano & Favarol",
+    intensity: "Light-Medium",
+    category: "olive-oil",
+    organic: false,
+    signatureAward: "Flos Olei Hall of Fame",
+    awardYear: 2025,
+    imagePath:
+      "/images/bottles/olio-extravergine-oliva-veneto-valpolicella-frantoio-bonamini-1-496x2048.png",
+    subtitle: "Frantoio Bonamini · Illasi Hills, Verona · Veneto · Italy",
+    tags: [
+      "Italy",
+      "Grignano & Favarol",
+      "Light-Medium",
+      "DOP Veneto Valpolicella",
+      "Hand Harvested",
+      "Veneto",
+    ],
+    tastingNotes: [
+      "Banana",
+      "Lettuce",
+      "Green Apple",
+      "Mint",
+      "Grass",
+      "Sweet Almond",
+    ],
+    pairings: ["Carpaccio", "White Fish", "Risotto", "Fresh Cheeses", "Spring Salads"],
+    description:
+      "The flagship product of Frantoio Bonamini — a family-run estate in the Illasi Hills northeast of Verona, producing olive oil since 1965. Grown on hand-harvested terraces in the same hills famed for Amarone wine, this DOP-certified oil is made from indigenous Grignano and Favarol varieties, cold-extracted the same day of harvest. Light and fruity with a fresh, elegant profile: aromas of banana, lettuce, green apple, mint and grass. Round and creamy on the palate with medium bitterness, a light peppery finish and a sweet almond close. Acidity: 0.15%.",
+    descriptionZh:
+      "博纳米尼弗兰托伊奥的旗舰产品——维罗纳东北伊拉西山丘家族酒庄，自1965年起专注橄榄油生产。橄榄树种植于因阿马罗内葡萄酒而闻名的同一山丘梯田，全程人工采摘。采用本地Grignano与Favarol品种，当日冷压萃取。口感轻盈果香，清新优雅：香蕉、生菜、青苹果、薄荷与青草气息。口感圆润顺滑，中度苦味，轻盈辛辣收尾，带甜杏仁余韵。酸度仅0.15%。",
+    producerBlurb:
+      "Frantoio Bonamini is a family-run estate in the Illasi Hills northeast of Verona, producing extra virgin olive oil since 1965. Indigenous Grignano and Favarol olives are hand-harvested on terraced groves in the hills famed for Amarone, then milled the same day at the family's own frantoio under tight quality control.",
+    producerBlurbZh:
+      "Frantoio Bonamini是位于维罗纳东北伊拉西山丘的家族酒庄，自1965年起专注特级初榨橄榄油生产。本土Grignano与Favarol品种橄榄在以阿马罗内葡萄酒闻名的梯田上人工采摘，当日于自家压榨厂完成冷压萃取，严格把控品质。",
+    cardAwards: [
+      "Flos Olei · Hall of Fame · 100/100",
+      "L'Orciolo d'Oro · Gold",
+      "NYIOOC · Gold",
+    ],
+    awards: [
+      "Flos Olei 2025 · Hall of Fame · 100/100",
+      "Flos Olei 2024 · Hall of Fame · 5th Consecutive Year · 100/100",
+      "Flos Olei 2019 · Best EVOO PDO/PGI",
+      "L'Orciolo d'Oro 2022 · Gold",
+      "NYIOOC · Gold",
+    ],
+  },
+  {
     slug: "aceto-del-duca",
     name: "Aceto Balsamico di Modena IGP",
     producer: "Giardini",
