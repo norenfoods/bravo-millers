@@ -177,7 +177,7 @@ export function FeaturedProductCard({
                     product.cardImageScale
                       ? {
                           transform: `scale(${product.cardImageScale})`,
-                          transformOrigin: "center bottom",
+                          transformOrigin: `center ${product.cardImageOriginY ?? "bottom"}`,
                         }
                       : undefined
                   }

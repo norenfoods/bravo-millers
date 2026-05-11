@@ -543,6 +543,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚亚得里亚海岸伊斯特拉Zambratija创立。庄园以本土品种为核心，主打Buža，采用有机与犹太洁食标准生产，是首个获得Flos Olei满分100/100的克罗地亚酒庄。",
     cardImageScale: 1.7,
+    cardImageOriginY: "75%",
     cardAwards: [
       "Flos Olei 2024 · 100/100 · First Croatian Oil",
       "Flos Olei · Best Packaging",
@@ -581,6 +582,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Limone调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜柠檬同步冷压而成，呈现纯净清新的柑橘调收尾风味。",
     cardImageScale: 1.7,
+    cardImageOriginY: "75%",
   },
   {
     slug: "mate-arancia",
@@ -609,6 +611,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Arancia调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜橙子同步冷压而成，呈现温润甜橙的收尾风味。",
     cardImageScale: 1.7,
+    cardImageOriginY: "75%",
   },
   {
     slug: "aceto-del-duca",
