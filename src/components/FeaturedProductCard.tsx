@@ -158,7 +158,7 @@ export function FeaturedProductCard({
               </div>
             )}
             <div
-              className={`overflow-hidden bg-transparent flex justify-center absolute w-auto ${styles.imageBox} ${
+              className={`${product.cardImageScale ? "overflow-visible" : "overflow-hidden"} bg-transparent flex justify-center absolute w-auto ${styles.imageBox} ${
                 placeTitleInPlinth ? "items-end" : "items-center"
               } transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-8`}
             >
@@ -173,6 +173,14 @@ export function FeaturedProductCard({
                   height={1200}
                   className={`relative z-10 transition-opacity duration-700 ${styles.imageClass}`}
                   sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  style={
+                    product.cardImageScale
+                      ? {
+                          transform: `scale(${product.cardImageScale})`,
+                          transformOrigin: "center bottom",
+                        }
+                      : undefined
+                  }
                 />
               ) : (
                 <CardBottlePlaceholder name={product.name} />

@@ -49,4 +49,5 @@ export interface FeaturedProduct {
   subtitle?: string;
   tastingProse?: string;
   classificationOverride?: { label: string; value: string }[];
+  cardImageScale?: number;
 }
