@@ -38,7 +38,9 @@ type ProductView = {
   awardYear: number;
   imagePath?: string;
   description: string;
+  descriptionZh?: string;
   producerBlurb: string;
+  producerBlurbZh?: string;
   tastingNotes: string[];
   pairings: string[];
   classification: string[];
@@ -75,7 +77,9 @@ function fromFeatured(p: FeaturedProduct): ProductView {
     awardYear: p.awardYear,
     imagePath: resolveImagePath(p.imagePath),
     description: p.description,
+    descriptionZh: p.descriptionZh,
     producerBlurb: p.producerBlurb,
+    producerBlurbZh: p.producerBlurbZh,
     tastingNotes: p.tastingNotes,
     pairings: p.pairings,
     classification,
@@ -237,6 +241,11 @@ function Hero({ view }: { view: ProductView }) {
           <p className="mt-5 text-sm leading-relaxed text-foreground/80 max-w-prose">
             {view.description}
           </p>
+          {view.descriptionZh && (
+            <p className="mt-3 text-sm leading-relaxed text-foreground/70 max-w-prose">
+              {view.descriptionZh}
+            </p>
+          )}
           {view.tastingProse && (
             <div className="mt-4 max-w-prose">
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-2">
@@ -258,6 +267,11 @@ function Hero({ view }: { view: ProductView }) {
           <p className="text-sm leading-relaxed text-foreground/80 max-w-prose">
             {view.producerBlurb}
           </p>
+          {view.producerBlurbZh && (
+            <p className="mt-3 text-sm leading-relaxed text-foreground/70 max-w-prose">
+              {view.producerBlurbZh}
+            </p>
+          )}
           <div className="mt-5 flex flex-col items-start gap-4">
             <button
               type="button"

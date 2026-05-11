@@ -1,4 +1,9 @@
-export type ProductIntensity = "Delicate" | "Medium" | "Robust" | "Traditional";
+export type ProductIntensity =
+  | "Delicate"
+  | "Medium"
+  | "Medium-Robust"
+  | "Robust"
+  | "Traditional";
 export type ProductCategory = "olive-oil" | "balsamic";
 
 export interface ProductPricing {
@@ -24,7 +29,9 @@ export interface FeaturedProduct {
   tastingNotes: string[];
   pairings: string[];
   description: string;
+  descriptionZh?: string;
   producerBlurb: string;
+  producerBlurbZh?: string;
   pricing?: ProductPricing;
   statusBadge?: string;
   harvestBadge?: string;

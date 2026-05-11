@@ -16,6 +16,7 @@ const VISIBLE_SLUGS = new Set([
   "fonte-di-foiano-toscano-igp",
   "fonte-di-foiano-riflessi",
   "fonte-di-foiano-grand-cru",
+  "frantoio-romano-ortice-n01",
 ]);
 
 const IGP_SLUGS = new Set([
