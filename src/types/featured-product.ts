@@ -45,6 +45,5 @@ export interface FeaturedProduct {
   tags?: string[];
   subtitle?: string;
   tastingProse?: string;
-  hideAwardHistory?: boolean;
   classificationOverride?: { label: string; value: string }[];
 }

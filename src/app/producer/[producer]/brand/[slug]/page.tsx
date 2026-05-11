@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Award, MapPin, Trophy } from "lucide-react";
+import { Award, Trophy } from "lucide-react";
 import { MobileWeChatBar } from "@/components/MobileWeChatBar";
 import { ProductPosterButton } from "@/components/ProductPosterButton";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -11,7 +11,6 @@ import { WINNERS_2026 } from "@/lib/winners";
 import { FEATURED_PRODUCTS, findFeatured } from "@/lib/featured-products";
 import { resolveImagePath } from "@/lib/resolve-image";
 import {
-  buildAwardHistory,
   buildHeroDescription,
   buildProducerBlurb,
   classificationChips,
@@ -49,7 +48,6 @@ type ProductView = {
   awards?: string[];
   cardAwards?: string[];
   tastingProse?: string;
-  hideAwardHistory?: boolean;
   classificationOverride?: { label: string; value: string }[];
   subtitle?: string;
   pricing?: { saleCny: number; originalCny?: number; discountPct?: number };
@@ -86,7 +84,6 @@ function fromFeatured(p: FeaturedProduct): ProductView {
     awards: p.awards,
     cardAwards: p.cardAwards,
     tastingProse: p.tastingProse,
-    hideAwardHistory: p.hideAwardHistory,
     classificationOverride: p.classificationOverride,
     subtitle: p.subtitle,
     pricing: p.pricing,
@@ -176,7 +173,6 @@ export default async function ProductDetailPage({
         <div className="container mx-auto px-4 max-w-6xl pt-8 pb-20">
           <Breadcrumb view={view} />
           <Hero view={view} />
-          <AwardHistory view={view} />
           <SimilarBrands view={view} />
         </div>
       </main>
@@ -272,21 +268,6 @@ function Hero({ view }: { view: ProductView }) {
               {view.producerBlurbZh}
             </p>
           )}
-          <div className="mt-5 flex flex-col items-start gap-4">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-border bg-secondary/40 hover:bg-secondary text-sm font-medium text-foreground transition-colors"
-            >
-              Producer Profile
-            </button>
-            <Link
-              href="#"
-              className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <MapPin className="h-3.5 w-3.5" />
-              Where to find {view.name} near you
-            </Link>
-          </div>
         </div>
       </div>
     </div>
@@ -447,60 +428,6 @@ function ClassificationCard({ view }: { view: ProductView }) {
       )}
     </div>
   );
-}
-
-function AwardHistory({ view }: { view: ProductView }) {
-  if (view.hideAwardHistory) return null;
-  if (view.awards && view.awards.length > 0) {
-    return (
-      <section className="mt-16">
-        <h2 className="text-base font-semibold text-foreground mb-4">Award History</h2>
-        <div className="flex flex-wrap gap-2">
-          {view.awards.map((a) => (
-            <span
-              key={a}
-              className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-amber-500/40 bg-amber-500/[0.04] text-sm text-foreground/90"
-            >
-              {!startsWithEmoji(a) && <Award className="h-3.5 w-3.5 text-amber-400" />}
-              <span className="font-medium">{a}</span>
-            </span>
-          ))}
-        </div>
-      </section>
-    );
-  }
-  const awards =
-    view.source === "winner"
-      ? buildAwardHistory({ slug: view.slug, medal: view.medal ?? "gold" } as Winner)
-      : buildFeaturedAwardHistory(view);
-  return (
-    <section className="mt-16">
-      <h2 className="text-base font-semibold text-foreground mb-4">Award History</h2>
-      <div className="flex flex-wrap gap-2">
-        {awards.map((a) => (
-          <span
-            key={a.year}
-            className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-amber-500/40 bg-amber-500/[0.04] text-sm text-foreground/90"
-          >
-            <Award className="h-3.5 w-3.5 text-amber-400" />
-            <span className="font-medium">{a.year}</span>
-            <span className="text-foreground/70">{a.tier}</span>
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function buildFeaturedAwardHistory(
-  view: ProductView,
-): { year: number; tier: string }[] {
-  const tiers = ["Gold", "Gold", "Silver", "Gold", "Silver", "Best in Class"];
-  const out: { year: number; tier: string }[] = [];
-  for (let i = 0; i < 5; i++) {
-    out.push({ year: view.awardYear - i, tier: tiers[i % tiers.length] });
-  }
-  return out;
 }
 
 function SimilarBrands({ view }: { view: ProductView }) {

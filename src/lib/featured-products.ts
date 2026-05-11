@@ -261,7 +261,6 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       bestBefore: "Best Before: 12 Oct 2027",
       storage: ["Climate-Controlled Storage · 稳控仓储"],
     },
-    hideAwardHistory: true,
   },
   {
     slug: "frantoio-romano-ortice-n01",
