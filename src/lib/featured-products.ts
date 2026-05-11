@@ -423,7 +423,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     organic: true,
     signatureAward: "Flos Olei Hall of Fame",
     awardYear: 2026,
-    imagePath: "/images/bottles/Q-Olivastro-touming.png",
+    imagePath: "/images/bottles/Quattrociocchi-Olivastro-500ml.png",
     subtitle: "Quattrociocchi · Alatri, Lazio · Italy",
     tags: ["Italy", "Itrana", "Robust", "Monovarietal", "Organic", "Lazio"],
     tastingNotes: [
@@ -468,7 +468,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     organic: true,
     signatureAward: "Flos Olei Hall of Fame",
     awardYear: 2025,
-    imagePath: "/images/bottles/Q-Superbo-touming.png",
+    imagePath: "/images/bottles/Quattrociocchi-Superbo-500ml.png",
     subtitle: "Quattrociocchi · Alatri, Lazio · Italy",
     tags: [
       "Italy",
