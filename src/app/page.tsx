@@ -24,6 +24,10 @@ const VISIBLE_SLUGS = new Set([
   "mate-viola-tonda",
   "mate-limone",
   "mate-arancia",
+  "nonno-salvatore-le-tre-colonne",
+  "viola-il-sincero",
+  "masoni-becciu-alphabetum",
+  "de-carlo-tenuta-torre-di-mossa-dop",
 ]);
 
 const IGP_SLUGS = new Set([
