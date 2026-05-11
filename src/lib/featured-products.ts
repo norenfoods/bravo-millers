@@ -626,7 +626,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     organic: false,
     signatureAward: "Kid-Friendly",
     awardYear: 2026,
-    imagePath: "/images/bottles/le tre colonne kids.png",
+    imagePath: "/images/bottles/Gemini_Generated_Image_pk2uwcpk2uwcpk2u.png",
     subtitle: "Le Tre Colonne · Puglia · Italy",
     tags: [
       "Italy",
