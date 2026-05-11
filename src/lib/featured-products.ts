@@ -317,6 +317,46 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     ],
   },
   {
+    slug: "frantoio-romano-racioppella-n03",
+    name: "Frantoio Romano Racioppella N.03 500ml",
+    producer: "Frantoio Romano",
+    producerSlug: "frantoio-romano",
+    region: "Campania",
+    country: "Italy",
+    cultivar: "Racioppella",
+    intensity: "Medium",
+    category: "olive-oil",
+    organic: false,
+    signatureAward: "Native Cultivar",
+    awardYear: 2026,
+    imagePath: "/images/bottles/olio_ortice_riserva.png",
+    subtitle: "Frantoio Romano · Benevento, Campania · Italy",
+    tags: [
+      "Italy",
+      "Racioppella",
+      "Medium",
+      "Monovarietal",
+      "Campania",
+      "Native Cultivar",
+    ],
+    tastingNotes: [
+      "Green Olive",
+      "Unripe Tomato",
+      "Artichoke",
+      "Celery",
+      "Unripe Fruit",
+    ],
+    pairings: ["White Fish", "Fresh Cheeses", "Spring Vegetables", "Carpaccio", "Light Salads"],
+    description:
+      "Frantoio Romano's third premium line — a rare indigenous cultivar grown exclusively on the ancient Samnite hills of Ponte, Benevento. Cold-extracted from Racioppella olives at the veraison stage. Clear emerald green color. On the nose: medium-intense fruitiness of still-green olives, unripe tomato, artichoke, celery and unripe fruit. On the palate: delicate, fluid and smooth with a pleasant balance of sweet and bitter, closing with a light spicy note.",
+    descriptionZh:
+      "弗兰托伊奥·罗马诺第三款精品产品线——稀有本土Racioppella品种，仅产于贝内文托蓬特地区古老的萨姆尼特山丘。在橄榄转色期精心采摘，冷压萃取。色泽清澈翠绿。香气呈中等浓郁果香，带有青橄榄、未熟番茄、朝鲜蓟、芹菜与未熟水果的气息。口感细腻流畅，甜苦均衡，收尾带有轻盈辛辣感。",
+    producerBlurb:
+      "Frantoio Romano is a family-run Sannio estate at the foot of Mount Taburno in Benevento, Campania. The N.03 cuvée is drawn from Racioppella, a rare indigenous cultivar found only on the Samnite hills of Ponte — hand-picked at veraison and cold-extracted within hours to preserve aromatic delicacy.",
+    producerBlurbZh:
+      "Frantoio Romano是位于坎帕尼亚大区贝内文托省塔布诺山脚下的桑尼奥家族酒庄。N.03选用稀有本土品种Racioppella，仅产于蓬特地区萨姆尼特山丘，在橄榄转色期人工采摘并于数小时内冷压萃取，保留其细腻芬芳。",
+  },
+  {
     slug: "aceto-del-duca",
     name: "Aceto Balsamico di Modena IGP",
     producer: "Giardini",
