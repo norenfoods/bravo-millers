@@ -4,6 +4,7 @@ export type ProductIntensity =
   | "Medium"
   | "Medium-Robust"
   | "Robust"
+  | "Extreme"
   | "Traditional";
 export type ProductCategory = "olive-oil" | "balsamic";
 

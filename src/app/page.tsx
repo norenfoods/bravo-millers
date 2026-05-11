@@ -19,6 +19,8 @@ const VISIBLE_SLUGS = new Set([
   "frantoio-romano-ortice-n01",
   "frantoio-romano-racioppella-n03",
   "bonamini-dop-veneto-valpolicella",
+  "quattrociocchi-olivastro",
+  "quattrociocchi-superbo",
 ]);
 
 const IGP_SLUGS = new Set([
