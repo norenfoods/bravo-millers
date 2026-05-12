@@ -567,6 +567,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, on Croatia's Adriatic coast. The estate works native varieties — Buža foremost — under organic and kosher protocols, and was the first Croatian producer to reach Flos Olei's 100/100.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚亚得里亚海岸伊斯特拉Zambratija创立。庄园以本土品种为核心，主打Buža，采用有机与犹太洁食标准生产，是首个获得Flos Olei满分100/100的克罗地亚酒庄。",
+    cardImageScale: 1.8,
+    cardImageOriginY: "63%",
     cardAwards: [
       "Flos Olei 2024 · 100/100 · First Croatian Oil",
       "Flos Olei · Best Packaging",
@@ -610,6 +612,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       storage: ["Climate-Controlled Storage · 稳控仓储"],
     },
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
+    cardImageScale: 1.8,
+    cardImageOriginY: "63%",
   },
   {
     slug: "mate-arancia",
@@ -643,6 +647,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       storage: ["Climate-Controlled Storage · 稳控仓储"],
     },
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
+    cardImageScale: 1.8,
+    cardImageOriginY: "63%",
   },
   {
     slug: "nonno-salvatore-le-tre-colonne",
@@ -684,6 +690,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     },
     giftBadge: "限时买赠 Olivare 500ml 一瓶",
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
+    cardImageScale: 1.8,
+    cardImageOriginY: "70%",
   },
   {
     slug: "viola-il-sincero",
@@ -734,6 +742,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       storage: ["Climate-Controlled Storage · 稳控仓储"],
     },
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
+    cardImageScale: 1.8,
+    cardImageOriginY: "69%",
   },
   {
     slug: "masoni-becciu-alphabetum",
@@ -786,6 +796,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Slow Food Presidium",
       "Bibenda · 4 Gocce",
     ],
+    cardImageScale: 1.8,
+    cardImageOriginY: "69%",
   },
   {
     slug: "de-carlo-tenuta-torre-di-mossa-dop",
@@ -839,6 +851,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     },
     giftBadge: "限时买赠 Olivare 500ml 一瓶",
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
+    cardImageScale: 1.8,
+    cardImageOriginY: "68%",
   },
   {
     slug: "aceto-del-duca",
