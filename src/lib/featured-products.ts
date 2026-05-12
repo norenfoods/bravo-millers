@@ -315,6 +315,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "L'Oro d'Italia",
       "Slow Food Presidium",
     ],
+    pricing: { originalCny: 278, saleCny: 151, discountPct: 46 },
+    freshnessTag: {
+      bestBefore: "Best Before: 30 Apr 2027",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "frantoio-romano-racioppella-n03",
@@ -355,6 +361,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Frantoio Romano is a family-run Sannio estate at the foot of Mount Taburno in Benevento, Campania. The N.03 cuvée is drawn from Racioppella, a rare indigenous cultivar found only on the Samnite hills of Ponte — hand-picked at veraison and cold-extracted within hours to preserve aromatic delicacy.",
     producerBlurbZh:
       "Frantoio Romano是位于坎帕尼亚大区贝内文托省塔布诺山脚下的桑尼奥家族酒庄。N.03选用稀有本土品种Racioppella，仅产于蓬特地区萨姆尼特山丘，在橄榄转色期人工采摘并于数小时内冷压萃取，保留其细腻芬芳。",
+    pricing: { originalCny: 298, saleCny: 168, discountPct: 44 },
+    freshnessTag: {
+      bestBefore: "Best Before: 30 Apr 2027",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "bonamini-dop-veneto-valpolicella",
