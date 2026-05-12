@@ -38,6 +38,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Olive Japan 2025 · Gold · Monovarietal Coratina",
       "Sol d'Oro 2026 · Gran Menzione · Monovarietal Coratina",
     ],
+    giftBadge: "Free Fonte di Foiano Toscano IGP 500ml with purchase · 限时买赠 Toscano IGP 500ml 一瓶",
   },
   {
     slug: "fonte-di-foiano-grand-cru",
