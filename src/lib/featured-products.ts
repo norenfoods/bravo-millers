@@ -542,8 +542,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, on Croatia's Adriatic coast. The estate works native varieties — Buža foremost — under organic and kosher protocols, and was the first Croatian producer to reach Flos Olei's 100/100.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚亚得里亚海岸伊斯特拉Zambratija创立。庄园以本土品种为核心，主打Buža，采用有机与犹太洁食标准生产，是首个获得Flos Olei满分100/100的克罗地亚酒庄。",
-    cardImageScale: 1.7,
-    cardImageOriginY: "30%",
+    cardImageScale: 2.85,
+    cardImageOriginY: "46.6%",
     cardAwards: [
       "Flos Olei 2024 · 100/100 · First Croatian Oil",
       "Flos Olei · Best Packaging",
@@ -581,8 +581,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, Croatia. The Limone condimento line cold-presses fresh lemons together with the estate's organic Istrian EVOO for a clean, citrus-forward finishing oil.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Limone调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜柠檬同步冷压而成，呈现纯净清新的柑橘调收尾风味。",
-    cardImageScale: 1.7,
-    cardImageOriginY: "30%",
+    cardImageScale: 2.85,
+    cardImageOriginY: "46.6%",
   },
   {
     slug: "mate-arancia",
@@ -610,8 +610,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, Croatia. The Arancia condimento line cold-presses fresh oranges together with the estate's organic Istrian EVOO for a warm, sweet-citrus finishing oil.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Arancia调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜橙子同步冷压而成，呈现温润甜橙的收尾风味。",
-    cardImageScale: 1.7,
-    cardImageOriginY: "30%",
+    cardImageScale: 2.85,
+    cardImageOriginY: "46.6%",
   },
   {
     slug: "nonno-salvatore-le-tre-colonne",
