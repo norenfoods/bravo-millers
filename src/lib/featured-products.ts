@@ -909,7 +909,7 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     organic: false,
     signatureAward: "Flos Olei 99/100",
     awardYear: 2026,
-    imagePath: "/images/bottles/1979-edited-vision-35.png",
+    imagePath: "/images/bottles/fonte-di-foiano-1979.png",
     subtitle: "Società Agricola Fonte di Foiano · Castagneto Carducci, Bolgheri · Tuscany",
     tags: [
       "Italy",
