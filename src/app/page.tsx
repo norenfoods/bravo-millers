@@ -28,6 +28,10 @@ const VISIBLE_SLUGS = new Set([
   "viola-il-sincero",
   "masoni-becciu-alphabetum",
   "de-carlo-tenuta-torre-di-mossa-dop",
+  "fonte-di-foiano-zefiro",
+  "fonte-di-foiano-1979",
+  "fonte-di-foiano-toscano-igp-bolgheri",
+  "olio-fabbri-olivare",
 ]);
 
 const IGP_SLUGS = new Set([
