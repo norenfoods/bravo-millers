@@ -998,8 +998,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     },
     giftBadge: "限时买赠 Fabbri 100% Italiano 500ml 一瓶",
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
-    cardImageScale: 1.8,
-    cardImageOriginY: "39%",
+    cardImageScale: 2.16,
+    cardImageOriginY: "47%",
   },
   {
     slug: "olio-fabbri-olivare",
@@ -1040,8 +1040,8 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       storage: ["Climate-Controlled Storage · 稳控仓储"],
     },
     crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
-    cardImageScale: 1.8,
-    cardImageOriginY: "45%",
+    cardImageScale: 2.16,
+    cardImageOriginY: "52%",
   },
   {
     slug: "aceto-del-duca",
