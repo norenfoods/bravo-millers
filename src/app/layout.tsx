@@ -3,17 +3,21 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bravo Millers · Premium Italian Olive Oils · Shanghai",
-  description:
-    "Browse all award-winning olive oils from the NYIOOC World Olive Oil Competition. Filter by country, intensity, cultivar, and organic certification.",
+  description: "ITALIAN EXTRA VIRGIN OLIVE OIL PRODUCED WITH GREEN OLIVES ONLY",
   icons: {
     icon: "/seo/favicon.png",
   },
   openGraph: {
     title: "Bravo Millers · Premium Italian Olive Oils · Shanghai",
-    description:
-      "Browse all award-winning olive oils from the NYIOOC World Olive Oil Competition. Filter by country, intensity, cultivar, and organic certification.",
+    description: "ITALIAN EXTRA VIRGIN OLIVE OIL PRODUCED WITH GREEN OLIVES ONLY",
     type: "website",
     url: "https://bestoliveoils.org/search",
+    images: [
+      {
+        url: "/images/bottles/意园大匠_logo_竖版组合_白底.png",
+        alt: "Bravo Millers",
+      },
+    ],
   },
 };
 
