@@ -39,6 +39,7 @@ export interface FeaturedProduct {
   statusBadge?: string;
   harvestBadge?: string;
   crossBorderBadge?: string;
+  giftBadge?: string;
   freshnessTag?: {
     bestBefore: string;
     storage: string[];

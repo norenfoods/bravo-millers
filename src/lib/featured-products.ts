@@ -421,6 +421,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "L'Orciolo d'Oro 2022 · Gold",
       "NYIOOC · Gold",
     ],
+    pricing: { originalCny: 528, saleCny: 241, discountPct: 54 },
+    freshnessTag: {
+      bestBefore: "Best Before: 19 Mar 2027",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "quattrociocchi-olivastro",
@@ -466,6 +472,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Sol d'Oro · Gold",
       "Ercole Olivario · 1st",
     ],
+    pricing: { originalCny: 657, saleCny: 398, discountPct: 39 },
+    freshnessTag: {
+      bestBefore: "Best Before: 23 Dec 2026",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "quattrociocchi-superbo",
@@ -591,6 +603,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, Croatia. The Limone condimento line cold-presses fresh lemons together with the estate's organic Istrian EVOO for a clean, citrus-forward finishing oil.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Limone调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜柠檬同步冷压而成，呈现纯净清新的柑橘调收尾风味。",
+    pricing: { originalCny: 228, saleCny: 127, discountPct: 44 },
+    freshnessTag: {
+      bestBefore: "Best Before: 31 Mar 2027",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "mate-arancia",
@@ -618,6 +636,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Mate Olive Oil is a visionary Istrian estate founded in 1994 by Mate Vekić in Zambratija, Croatia. The Arancia condimento line cold-presses fresh oranges together with the estate's organic Istrian EVOO for a warm, sweet-citrus finishing oil.",
     producerBlurbZh:
       "Mate橄榄油庄园由Mate Vekić于1994年在克罗地亚伊斯特拉Zambratija创立。Arancia调味油以庄园有机伊斯特拉特级初榨橄榄油与新鲜橙子同步冷压而成，呈现温润甜橙的收尾风味。",
+    pricing: { originalCny: 228, saleCny: 127, discountPct: 44 },
+    freshnessTag: {
+      bestBefore: "Best Before: 31 Mar 2027",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "nonno-salvatore-le-tre-colonne",
@@ -652,6 +676,13 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Le Tre Colonne is an Apulian family estate working rare native cultivars. The Nonno Salvatore line uses 100% Bella di Cerignola olives, picked early in November and cold-extracted to keep the oil light enough for children and sensitive palates.",
     producerBlurbZh:
       "Le Tre Colonne是普利亚家族酒庄，专注稀有本土品种。Nonno Salvatore产品线选用100% Bella di Cerignola橄榄，于11月初采摘并冷压萃取，保留轻盈口感，适合儿童与味蕾敏感者。",
+    pricing: { originalCny: 608, saleCny: 398, discountPct: 35 },
+    freshnessTag: {
+      bestBefore: "Best Before: 26 Dec 2026",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    giftBadge: "限时买赠 Olivare 500ml 一瓶",
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "viola-il-sincero",
@@ -696,6 +727,12 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "Slow Food Presidium",
       "NYIOOC · Gold",
     ],
+    pricing: { originalCny: 528, saleCny: 164, discountPct: 69 },
+    freshnessTag: {
+      bestBefore: "Best Before: 20 Jul 2026",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "masoni-becciu-alphabetum",
@@ -794,6 +831,13 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "NYIOOC · Gold",
       "Slow Food",
     ],
+    pricing: { originalCny: 398, saleCny: 139, discountPct: 65 },
+    freshnessTag: {
+      bestBefore: "Best Before: 31 Aug 2026",
+      storage: ["Climate-Controlled Storage · 稳控仓储"],
+    },
+    giftBadge: "限时买赠 Olivare 500ml 一瓶",
+    crossBorderBadge: "Cross-border · No CN Label · 跨境产品 · 无中文标签",
   },
   {
     slug: "aceto-del-duca",

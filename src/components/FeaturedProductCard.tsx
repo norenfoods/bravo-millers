@@ -204,9 +204,17 @@ export function FeaturedProductCard({
 
           <div className={`flex flex-col flex-grow ${styles.titlePad} pb-4 text-center`}>
             {!placeTitleInPlinth && titleContent}
+            {product.giftBadge && (
+              <div className="mt-2 flex justify-center">
+                <span className="inline-flex items-center gap-1 h-6 px-3 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-amber-950 text-[10px] font-bold tracking-wide shadow-md ring-1 ring-amber-300/50">
+                  <span aria-hidden>🎁</span>
+                  {product.giftBadge}
+                </span>
+              </div>
+            )}
             {product.crossBorderBadge && (
               <div className="mt-2 flex justify-center">
-                <span className="inline-flex items-center h-5 px-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-[10px] font-medium tracking-wide">
+                <span className="inline-flex items-center h-5 px-2.5 rounded-full border border-border bg-muted/60 text-muted-foreground text-[10px] font-medium tracking-wide whitespace-nowrap">
                   {product.crossBorderBadge}
                 </span>
               </div>
